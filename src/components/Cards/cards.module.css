@@ -1,0 +1,25 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    background: #2B282F;
+    background-image :url('../../images/606020.jpg');
+    background-repeat: repeat-y;
+        
+}
+.gallery
+{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 5px;
+    border-radius: 10px;
+    
+}

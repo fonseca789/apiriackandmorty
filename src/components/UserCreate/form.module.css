@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+
+
+@keyframes animatebg {
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+.loginBox {
+    position: relative;
+    width: 350px;
+    height: 400px;
+    background: transparent;
+    border: 2px solid rgba(255,255,255, .5);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(15px);
+    font-family: "Poppins";
+}
+.loginBox h2 {
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+}
+.loginBox .inputBox {
+    position: relative;
+    width: 310px;
+    margin: 30px 0;
+    border-bottom: 2px solid #fff;
+}
+.loginBox .inputBox label {
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    transform: translate(-50%);
+    font-size: 1em;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+.loginBox .inputBox input:focus~label,
+.loginBox .inputBox input:valid~label {
+    top: -5px;
+}
+.loginBox .inputBox input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #fff;
+    align-items: flex-end;
+    padding: 0 8px 0 5px;
+
+}
+
+.loginBox .rememberForgot {
+    margin: -15px 0 15px;
+    color: #fff;
+    font-size: 0.9em;
+    display: flex;
+    justify-content: space-between;
+
+}
+.loginBox .rememberForgot label input {
+    margin-right: 3px;
+
+}
+.loginBox .rememberForgot a {
+    color: #fff;
+    text-decoration: none;
+
+}
+.loginBox .rememberForgot a:hover {
+    text-decoration: underline;
+}
+.loginBox .loginBox button  {
+    width: 100%;
+    height: 40px;
+    background: #fff;
+    border-radius: 40px;
+    cursor: pointer;
+    color: #000;
+    font-weight: 500;
+}
+.loginBox .registerLink {
+    font-size: 0.9em;
+    color: #fff;
+    text-align: center;
+    margin: 25px 0 10px;
+
+}
+.loginBox .registerLink p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+
+
+}
+.loginBox .registerLink p a:hover {
+    text-decoration: underline;
+}
+button {
+    
+    background-color: transparent;
+    color: #fff;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: .5s;
+    &:hover {
+        background-color: #fff;
+        color: #000;
+    }
+}
+
+@media (max-width: 360px) {
+    .loginBox {
+        width: 100%;
+        height: 100vh;
+        border: none;
+        border: 0;
+    }
+    .inputBox {
+        width: 290px;
+    }
+    
+}
+.warning {
+    border: solid red 1px;
+    border-radius: 0.2em;
+  }
+  
+  #danger {
+    font-size: 15px;
+    color: red;
+    margin-left: 10em;
+  }

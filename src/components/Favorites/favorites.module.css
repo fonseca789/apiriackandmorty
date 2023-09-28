@@ -1,0 +1,15 @@
+.gallery
+{
+    
+    display: inline-flexbox;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 5px;
+    border-radius: 10px;
+    
+}
+h1 {
+    text-align: center;
+}
