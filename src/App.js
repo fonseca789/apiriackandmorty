@@ -15,7 +15,8 @@ function App() {
   //crear estado
   let [characters, setCharacters] = useState([]);
   const [access, setAccess] = useState(false);
-
+  //URL 
+  const URL_BASE = 'https://server-prueba-api.onrender.com'
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -28,7 +29,7 @@ function App() {
   //  backend quien causa el error
   const login = async (userData) => {
     const { email, password } = userData;
-    const URL = "http://localhost:3001/rickandmorty/login/";
+    const URL = `${URL_BASE}/rickandmorty/login/`;
     // axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
     // axios(`${URL}?email=${email}&password=${password}`).then(({ data }) => {
     axios
@@ -48,13 +49,13 @@ function App() {
         }
       })
       .catch((error) => {
-        alert("Usuario/clave no registrada");
+        alert("Usuario/clave no registrada"+error.message);
         navigate("/createuser");
       });
   };
   const crearUser = async (userData) => {
     const { email, password } = userData;
-    const URL = "http://localhost:3001/rickandmorty/usuario/";
+    const URL = `${URL_BASE}/rickandmorty/usuario/`;
     axios
       .post(URL, {
         email,
@@ -76,7 +77,7 @@ function App() {
 
   const onSearch = (id) => {
     if (id) {
-      axios(`http://localhost:3001/rickandmorty/character/${id}`)
+      axios(`${URL_BASE}/rickandmorty/character/${id}`)
         .then(({ data }) => {
           if (data.name) {
             const characterExists = characters.findIndex(
@@ -99,7 +100,7 @@ function App() {
   const randoCharacter = () => {
     const randomId = Math.floor(Math.random() * 826) + 1;
 
-    axios(`http://localhost:3001/rickandmorty/character/` + randomId).then(
+    axios(`${URL_BASE}/rickandmorty/character/` + randomId).then(
       ({ data }) => {
         const characterExists = characters.includes(data);
 

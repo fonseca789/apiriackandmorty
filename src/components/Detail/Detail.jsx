@@ -4,9 +4,10 @@ import axios from "axios";
 
 export default function Detail() {
   const { id } = useParams();
+  const URL_BASE = 'https://server-prueba-api.onrender.com';
   const [character, setCharacter] = useState({});
   useEffect(() => {
-    axios(`http://localhost:3001/rickandmorty/character/${id}`).then(
+    axios(`${URL_BASE}/rickandmorty/character/${id}`).then(
       ({ data }) => {
         if (data.name) {
           setCharacter(data);

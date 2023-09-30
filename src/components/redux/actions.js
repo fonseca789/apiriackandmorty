@@ -2,10 +2,12 @@ import axios from "axios";
 export const ADD_FAV ='ADD_FAV';
 export const REMOVE_FAV = 'REMOVE_FAV'
 
+const URL_BASE = 'https://server-prueba-api.onrender.com'
+
 
 // ACTION | addFav
 export const addFav = (character) => {
-   const endpoint = 'http://localhost:3001/rickandmorty/fav';
+   const endpoint = `${URL_BASE}/rickandmorty/fav`;
    return (dispatch) => {
       axios.post(endpoint, character).then(({ data }) => {
          return dispatch({
