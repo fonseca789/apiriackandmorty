@@ -20,7 +20,7 @@ export const addFav = (character) => {
 
 // ACTION | removeFav
 export const removeFav = (id) => {
-    const endpoint = 'http://localhost:3001/rickandmorty/fav/' + id;
+    const endpoint = `${URL_BASE}/rickandmorty/fav` + id;
     return (dispatch) => {
        axios.delete(endpoint).then(({ data }) => {
           return dispatch({
@@ -34,7 +34,7 @@ export const removeFav = (id) => {
  // ACTION | getFav
 
  export const getFav = () => {
-   const endpoint = 'http://localhost:3001/rickandmorty/fav/';
+   const endpoint = `${URL_BASE}/rickandmorty/fav`;
    return (dispatch) => {
       axios.get(endpoint).then(({ data }) => {
          return dispatch({
